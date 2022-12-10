@@ -23,6 +23,7 @@ android {
     defaultConfig {
         applicationId "lk.ac.mrt.cse.dbs.simpleexpensemanager"
         minSdkVersion 19
+        //noinspection ExpiredTargetSdkVersion
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -33,6 +34,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    namespace 'lk.ac.mrt.cse.dbs.simpleexpensemanager'
 }
 
 dependencies {

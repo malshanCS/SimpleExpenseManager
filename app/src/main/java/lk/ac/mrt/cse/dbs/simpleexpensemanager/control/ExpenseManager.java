@@ -70,6 +70,23 @@ public abstract class ExpenseManager implements Serializable {
         }
     }
 
+    // Function return account balance, to given account number
+    public double getAccBalance(String accountNo){
+        double balance = 0;
+        Account acc = null;
+        try {
+            acc = accountsHolder.getAccount(accountNo);
+        } catch (InvalidAccountException e) {
+            e.printStackTrace();
+        }
+
+        if(acc != null){
+            balance = acc.getBalance();
+        }
+
+        return balance;
+    }
+
     /***
      * Get a list of transaction logs.
      *
@@ -127,6 +144,10 @@ public abstract class ExpenseManager implements Serializable {
     public void setTransactionsDAO(TransactionDAO transactionDAO) {
         this.transactionsHolder = transactionDAO;
     }
+
+
+
+
 
     /***
      * This method should be implemented by the concrete implementation of this class. It will dictate how the DAO
